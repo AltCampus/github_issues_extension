@@ -98,7 +98,7 @@ function github() {
   });
 
   arr.map(n => {
-    fetch(`${document.location.href.split("?")[0]}/${n}`).then(function(
+    fetch(`${document.location.href.split("issues")[0]+"issues"}/${n}`).then(function(
       response
     ) {
       var data = response.text().then(function(res) {
