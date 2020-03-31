@@ -24,7 +24,7 @@ if (document.location.href.includes('projects')) {
 				} else {
 				}
 			}
-			inject.innerHTML = ` ${a}`;
+			inject.innerHTML = ` ${a.substring(0,a.length-2)}`;
 			inject.className = 'Label Label--outline v-align-middle mr-1 mb-1';
 			inject.style.marginLeft = '.2rem';
 			project.append(inject);
