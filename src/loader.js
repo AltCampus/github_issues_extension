@@ -9,18 +9,24 @@ if (document.location.href.includes('projects')) {
 			count = data.split('<span class="js-column-nav-name" itemprop="name">').length - 1;
 			var a = '';
 			for (i = 1; i < count; i++) {
-				a +=
-					' ' +
-					(data.split('<span class="js-column-nav-name" itemprop="name">')[i].split('</span>')[0] +
-						':' +
-						data
-							.split('<span class="js-column-nav-name" itemprop="name">')
-							[i].split('</span>')[1]
-							.split('>')[1]) +
-					' ';
+				if (data.split('<span class="js-column-nav-name" itemprop="name">')[i].split('</span>')[0] != 'Done') {
+					a +=
+						' ' +
+						(data.split('<span class="js-column-nav-name" itemprop="name">')[i].split('</span>')[0] +
+							':' +
+							'<b>' +
+							data
+								.split('<span class="js-column-nav-name" itemprop="name">')
+								[i].split('</span>')[1]
+								.split('>')[1]) +
+						'</b>' +
+						' | ';
+				} else {
+				}
 			}
-			inject.innerText = ` [${a}]`;
-			inject.style.color = 'grey';
+			inject.innerHTML = ` ${a}`;
+			inject.className = 'Label Label--outline v-align-middle mr-1 mb-1';
+			inject.style.marginLeft = '.2rem';
 			project.append(inject);
 		}
 	}
