@@ -1,4 +1,10 @@
 if (document.location.href.includes('projects')) {
+  Array.from(document.querySelectorAll('.text-gray-light')).map(a=>{
+    return a.style.display="none"});
+  Array.from(document.querySelectorAll('.Label--outline')).map(a=>{
+    return a.style.display="none"});
+  Array.from(document.querySelectorAll('.progress-bar')).map(a=>{
+    return a.style.display="none"});
 	function styleIssue(data, n) {
 		if (!n) {
 		} else {
